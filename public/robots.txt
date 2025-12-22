@@ -1,0 +1,29 @@
+# robots.txt for Bangalore Hangout Hub
+# This file provides instructions to web crawlers and search engines
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env*
+
+# Crawl delay (in seconds) - optional, adjust as needed
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://bangalore-hangout-hub.example.com/sitemap.xml
+Sitemap: https://bangalore-hangout-hub.example.com/sitemap-index.xml
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
