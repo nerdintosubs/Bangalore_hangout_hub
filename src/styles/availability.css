@@ -1,0 +1,169 @@
+/* Availability (password-gated) + subtle aesthetics */
+
+.availability {
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  animation: fadeInUp 500ms ease both;
+}
+
+.lock-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(80,201,195,0.2);
+}
+
+.lock-box .row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.lock-box label {
+  font-weight: 600;
+  color: #4a90e2;
+  min-width: 60px;
+}
+
+.lock-form {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.lock-form input[type="password"] {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.status {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.status.ok {
+  background: #e6fffa;
+  color: #0f766e;
+  border: 1px solid #99f6e4;
+}
+
+.status.err {
+  background: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+.status.info {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.availability .note {
+  background: #f7fdfa;
+  border-left: 4px solid #50c9c3;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  color: #0f766e;
+}
+
+/* Customer Signup styling */
+.customer-signup {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  animation: fadeIn 450ms ease both;
+}
+
+.customer-signup .muted {
+  color: #64748b;
+  text-align: center;
+  margin: -0.75rem 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.customer-signup .signup-form input {
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.customer-signup .btn {
+  align-self: center;
+}
+
+/* Trust badges (appeal + credibility) */
+.trust-badges {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.badge-card {
+  background: #ffffff;
+  padding: 1rem 1rem 1.1rem;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(74, 144, 226, 0.16);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.badge-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+}
+
+.badge-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.badge-title {
+  font-weight: 700;
+  color: #4a90e2;
+  margin-bottom: 0.25rem;
+}
+
+.badge-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* Hero visual enhancement (gradient animated headline) */
+.hero h2 {
+  background: linear-gradient(90deg, #4a90e2, #50c9c3, #4a90e2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-pan 8s linear infinite;
+}
+
+@keyframes gradient-pan {
+  0% { background-position: 0% 50%; }
+  100% { background-position: -200% 50%; }
+}
+
+/* Subtle animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

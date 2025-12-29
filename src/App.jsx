@@ -7,6 +7,9 @@ import FAQ from './components/FAQ';
 import ProviderSignup from './components/ProviderSignup';
 import Footer from './components/Footer';
 import StickyCTA from './components/StickyCTA';
+import Availability from './components/Availability';
+import CustomerSignup from './components/CustomerSignup';
+import TrustBadges from './components/TrustBadges';
 
 function App() {
   return (
@@ -14,8 +17,11 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <TrustBadges />
         <TherapistsGrid />
         <Services />
+        <CustomerSignup />
+        <Availability />
         <FAQ />
         <ProviderSignup />
       </main>
