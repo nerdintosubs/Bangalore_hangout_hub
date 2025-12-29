@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function TherapistCard({ t }) {
-  const msg = encodeURIComponent(`Hi ${t.name}, I'd like to book a session in ${t.zones[0]}. Specialties: ${t.specialties.join(', ')}.`);
+  const msg = encodeURIComponent(`Hi ${t.name}, I'd like to book a session in ${t.zones[0]}. Specialties: ${t.specialties.join(', ')}. Source: therapist-card`);
   const stars = '★'.repeat(Math.floor(t.rating)) + '☆'.repeat(5 - Math.floor(t.rating));
 
   return (

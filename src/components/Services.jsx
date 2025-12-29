@@ -1,6 +1,6 @@
 export default function Services() {
   return (
-    <section>
+    <section id="services">
       <h2>Our Services</h2>
       <div className="services-grid">
         <div className="service-card">

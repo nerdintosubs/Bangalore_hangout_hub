@@ -1,6 +1,6 @@
 export default function FAQ() {
   return (
-    <section className="faq">
+    <section id="faq" className="faq">
       <h2>Frequently Asked Questions</h2>
       <div className="faq-item">
         <h3>Are all therapists female?</h3>

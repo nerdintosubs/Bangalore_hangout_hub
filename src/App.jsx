@@ -6,6 +6,7 @@ import Services from './components/Services';
 import FAQ from './components/FAQ';
 import ProviderSignup from './components/ProviderSignup';
 import Footer from './components/Footer';
+import StickyCTA from './components/StickyCTA';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <FAQ />
         <ProviderSignup />
       </main>
+      <StickyCTA />
       <Footer />
     </div>
   );

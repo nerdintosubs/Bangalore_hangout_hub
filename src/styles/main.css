@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -11,6 +15,7 @@ body {
   background-color: #f8f9fa;
   color: #333;
   line-height: 1.6;
+  padding-bottom: 100px; /* space for sticky CTA */
 }
 
 header {
@@ -68,6 +73,7 @@ main {
 
 section {
   margin-bottom: 4rem;
+  scroll-margin-top: 90px; /* anchor offset for sticky header */
 }
 
 h2 {
@@ -231,6 +237,18 @@ h2 {
   text-decoration: none;
 }
 
+/* Outline button variant for sticky CTA secondary action */
+.btn-outline {
+  background: #fff;
+  color: #4a90e2;
+  border: 2px solid #4a90e2;
+}
+
+.btn-outline:hover {
+  background: #4a90e2;
+  color: #fff;
+}
+
 footer {
   background: #333;
   color: white;
@@ -317,6 +335,26 @@ footer p {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
+/* Sticky bottom WhatsApp/Call CTA */
+.sticky-cta {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.sticky-cta .btn {
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   main {
     padding: 1rem;
@@ -346,5 +384,12 @@ footer p {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sticky-cta {
+    left: 16px;
+    right: 16px;
+    transform: none;
+    justify-content: space-between;
   }
 }
