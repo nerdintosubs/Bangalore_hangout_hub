@@ -10,6 +10,7 @@ import StickyCTA from './components/StickyCTA';
 import Availability from './components/Availability';
 import CustomerSignup from './components/CustomerSignup';
 import TrustBadges from './components/TrustBadges';
+import WaveDivider from './components/WaveDivider';
 
 function App() {
   return (
@@ -17,9 +18,11 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <WaveDivider />
         <TrustBadges />
         <TherapistsGrid />
         <Services />
+        <WaveDivider flip />
         <CustomerSignup />
         <Availability />
         <FAQ />

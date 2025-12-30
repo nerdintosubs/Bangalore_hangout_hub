@@ -1,28 +1,90 @@
 export default function ProviderSignup() {
+  const ZONES = [
+    "Koramangala",
+    "Indiranagar",
+    "HSR Layout",
+    "Jayanagar",
+    "Whitefield",
+    "Marathahalli",
+    "MG Road",
+    "Domlur"
+  ];
+
   function submit(e) {
     e.preventDefault();
     const f = e.target;
+
+    const zones = Array.from(f.querySelectorAll('input[name="zones"]:checked')).map(i => i.value);
+    const shifts = Array.from(f.querySelectorAll('input[name="shifts"]:checked')).map(i => i.value);
+
+    const fresher = f.fresher.checked ? "Yes" : "No";
+
     const msg = encodeURIComponent(
-      `Provider Signup:
+`Provider Signup:
 Name: ${f.name.value}
 Phone: ${f.phone.value}
-Experience: ${f.experience.value}
+Residency: ${f.residency.value}
+Willing to Relocate: ${f.relocate.value}
+Zones: ${zones.join(', ') || 'NA'}
+Shifts: ${shifts.join(', ') || 'NA'}
+Fresher: ${fresher}
+Experience: ${f.experience.value || '0'}
 Specialties: ${f.specialties.value}
 Certifications: ${f.certifications.value}
-Source: provider-signup`
+Source: provider-signup-v2`
     );
-    window.open(`https://wa.me/917068344125?text=${msg}`);
+    window.open(\`https://wa.me/917068344125?text=\${msg}\`, '_blank');
   }
+
   return (
     <section id="signup">
       <h2>Become a Provider</h2>
-      <p>Join our network of certified female therapists. We handle bookings and payments.</p>
+      <p>We prioritize Bangalore-based female therapists and freshers willing to learn. Weekly payouts via UPI. Safety-first policy.</p>
+
       <form onSubmit={submit} className="signup-form">
         <input name="name" placeholder="Full Name" required />
         <input name="phone" placeholder="Phone (WhatsApp)" required />
-        <input name="experience" placeholder="Experience (years)" required />
-        <input name="specialties" placeholder="Specialties (e.g., Swedish, Aromatherapy)" required />
-        <input name="certifications" placeholder="Certifications" />
+
+        <select name="residency" defaultValue="Bangalore Resident" required>
+          <option value="Bangalore Resident">Bangalore Resident</option>
+          <option value="Relocating to Bangalore">Relocating to Bangalore</option>
+          <option value="Outside Bangalore (not relocating)">Outside Bangalore (not relocating)</option>
+        </select>
+
+        <select name="relocate" defaultValue="Yes" required>
+          <option value="Yes">Willing to relocate if required: Yes</option>
+          <option value="No">Willing to relocate if required: No</option>
+        </select>
+
+        <label>
+          <input type="checkbox" name="fresher" /> I am a fresher (01 yr)
+        </label>
+
+        <input name="experience" placeholder="Experience (years)" />
+
+        <input name="specialties" placeholder="Specialties (e.g., Swedish, Aromatherapy)" />
+        <input name="certifications" placeholder="Certifications (if any)" />
+
+        <div>
+          <strong>Preferred Zones (Bangalore)</strong>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '6px', marginTop: '6px' }}>
+            {ZONES.map(z => (
+              <label key={z} style={{ background: '#fff', padding: '8px 10px', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                <input type="checkbox" name="zones" value={z} /> {z}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <strong>Available Shifts</strong>
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginTop: '6px' }}>
+            <label><input type="checkbox" name="shifts" value="Morning (712)" /> Morning (712)</label>
+            <label><input type="checkbox" name="shifts" value="Afternoon (125)" /> Afternoon (125)</label>
+            <label><input type="checkbox" name="shifts" value="Evening (510)" /> Evening (510)</label>
+          </div>
+        </div>
+
         <button type="submit" className="btn">Submit via WhatsApp</button>
       </form>
     </section>
