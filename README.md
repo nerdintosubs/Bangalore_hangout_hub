@@ -49,6 +49,10 @@ All bookings and provider inquiries route to WhatsApp: **+91 70683 44125**
 - **DNS**: Point domain to host provider
 - **TLS**: Auto-provisioned by host
 
+## Growth & Marketing
+
+- See [Growth Playbook](docs/marketing-playbook.md) for a safety-first plan covering SEO, social/content, CRM, partnerships, loyalty/referrals, paid media, and measurement tailored to BLR Hangout Hub.
+
 ## Legal
 
 See Terms of Service, Privacy Policy, and Safety guidelines in the site footer.
