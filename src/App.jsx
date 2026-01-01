@@ -11,6 +11,8 @@ import Availability from './components/Availability';
 import CustomerSignup from './components/CustomerSignup';
 import TrustBadges from './components/TrustBadges';
 import WaveDivider from './components/WaveDivider';
+import Pricing from './components/Pricing';
+import Reviews from './components/Reviews';
 
 function App() {
   return (
@@ -20,8 +22,10 @@ function App() {
         <Hero />
         <WaveDivider />
         <TrustBadges />
+        <Pricing />
         <TherapistsGrid />
         <Services />
+        <Reviews />
         <WaveDivider flip />
         <CustomerSignup />
         <Availability />

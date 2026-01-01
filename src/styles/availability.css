@@ -167,3 +167,147 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* ===========================
+   Pricing styles
+   =========================== */
+.pricing-banner {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+  animation: fadeInUp 500ms ease both;
+}
+
+.pricing-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(74,144,226,0.18);
+}
+
+.pricing-head {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.pricing-head h2 {
+  margin: 0 0 0.25rem 0;
+}
+
+.pricing-head .muted {
+  color: #64748b;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 0.75rem;
+}
+
+.pricing-item {
+  background: #fdfefe;
+  border: 1px solid #e6eef8;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.pricing-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+}
+
+.pricing-item.featured {
+  border-color: #50c9c3;
+  box-shadow: 0 12px 32px rgba(80,201,195,0.18);
+}
+
+.pricing-item h3 {
+  margin: 0 0 0.35rem;
+  color: #4a90e2;
+}
+
+.pricing-item .price {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.pricing-item .duration {
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-item ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #475569;
+}
+
+.pricing-ctas {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.smallprint {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ===========================
+   Reviews styles
+   =========================== */
+.reviews {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+  animation: fadeIn 450ms ease both;
+}
+
+.reviews h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.review-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e6eef8;
+  padding: 1rem;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+}
+
+.review-stars {
+  color: #ffd700;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.review-text {
+  color: #334155;
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+}
+
+.review-name {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.reviews-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
