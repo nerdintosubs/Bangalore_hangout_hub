@@ -6,7 +6,7 @@ export default function TherapistCard({ t, source = 'therapist-card' }) {
 
   return (
     <div className="card">
-      <img src={t.photo} alt={t.name} />
+      <img src={t.photo} alt={t.name} loading="lazy" decoding="async" width="600" height="400" />
       <h3>{t.name}</h3>
       <p className="bio">{t.bio}</p>
       <div className="rating">{stars} ({t.rating}/5)</div>
@@ -20,7 +20,7 @@ export default function TherapistCard({ t, source = 'therapist-card' }) {
       <div className="certifications">
         Certifications: {t.certifications.join(', ')}
       </div>
-      <a href={`https://wa.me/917068344125?text=${msg}`} className="btn">Book via WhatsApp</a>
+      <a href={`https://wa.me/917068344125?text=${msg}`} className="btn" target="_blank" rel="noopener noreferrer">Book via WhatsApp</a>
     </div>
   );
 }

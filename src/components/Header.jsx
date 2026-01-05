@@ -7,6 +7,9 @@ export default function Header() {
           <li><a href="#home">Home</a></li>
           <li><a href="#therapists">Therapists</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#lead">Enquire</a></li>
           <li><a href="#customer-signup">Get Code</a></li>
           <li><a href="#availability">Customer Area</a></li>
           <li><a href="#faq">FAQ</a></li>

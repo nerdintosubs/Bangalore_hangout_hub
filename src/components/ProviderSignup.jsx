@@ -10,6 +10,9 @@ export default function ProviderSignup() {
     "Domlur"
   ];
 
+  // TODO: Replace with your real Google Form link
+  const googleFormUrl = "https://forms.gle/PROVIDER_FORM_ID";
+
   function submit(e) {
     e.preventDefault();
     const f = e.target;
@@ -41,7 +44,26 @@ Source: provider-signup-v2`
       <h2>Become a Provider</h2>
       <p>We prioritize Bangalore-based female therapists and freshers willing to learn. Weekly payouts via UPI. Safety-first policy.</p>
 
-      <form onSubmit={submit} className="signup-form">
+      <div className="provider-actions" style={{display:'flex', gap:'12px', flexWrap:'wrap', marginBottom:'12px'}}>
+        <a className="btn" href={googleFormUrl} target="_blank" rel="noopener noreferrer">Apply via Google Form</a>
+        <a className="btn btn-outline" href="#signup-form">Quick Apply via WhatsApp</a>
+      </div>
+
+      <details style={{marginBottom:'14px', background:'#fff', border:'1px solid #e6eef8', borderRadius:'8px', padding:'10px'}}>
+        <summary style={{cursor:'pointer', fontWeight:600, color:'#4a90e2'}}>Prefer embedded form? Open here</summary>
+        <div style={{marginTop:'10px'}}>
+          <iframe
+            title="Provider Google Form"
+            src={googleFormUrl}
+            width="100%"
+            height="640"
+            style={{border:'0', background:'#fff'}}
+            loading="lazy"
+          />
+        </div>
+      </details>
+
+      <form id="signup-form" onSubmit={submit} className="signup-form">
         <input name="name" placeholder="Full Name" required />
         <input name="phone" placeholder="Phone (WhatsApp)" required />
 
@@ -61,7 +83,6 @@ Source: provider-signup-v2`
         </label>
 
         <input name="experience" placeholder="Experience (years)" />
-
         <input name="specialties" placeholder="Specialties (e.g., Swedish, Aromatherapy)" />
         <input name="certifications" placeholder="Certifications (if any)" />
 
@@ -86,6 +107,10 @@ Source: provider-signup-v2`
         </div>
 
         <button type="submit" className="btn">Submit via WhatsApp</button>
+
+        <p className="muted" style={{textAlign:'center', marginTop:'8px'}}>
+          Prefer forms instead of WhatsApp? Use the Google Form above. We will reach out on the same day.
+        </p>
       </form>
     </section>
   );

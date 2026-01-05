@@ -13,6 +13,7 @@ import TrustBadges from './components/TrustBadges';
 import WaveDivider from './components/WaveDivider';
 import Pricing from './components/Pricing';
 import Reviews from './components/Reviews';
+import CustomerLead from './components/CustomerLead';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <TherapistsGrid />
         <Services />
         <Reviews />
+        <CustomerLead />
         <WaveDivider flip />
         <CustomerSignup />
         <Availability />
