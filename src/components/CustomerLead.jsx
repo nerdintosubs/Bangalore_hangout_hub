@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CustomerLead() {
   // TODO: Replace with your real Google Form link for customer leads
-  const googleFormUrl = "https://forms.gle/CUSTOMER_FORM_ID";
+  const googleFormUrl = "https://docs.google.com/forms/d/1oVPZf_R0VCJN0FFMAd63u_M0wYP33SU5fAAX1OjTJOA/viewform";
 
   return (
     <section id="lead" className="customer-lead">

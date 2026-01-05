@@ -11,7 +11,7 @@ export default function ProviderSignup() {
   ];
 
   // TODO: Replace with your real Google Form link
-  const googleFormUrl = "https://forms.gle/PROVIDER_FORM_ID";
+  const googleFormUrl = "https://docs.google.com/forms/d/1mQDB7jcUjvagRaBgPknCL6rkyFJw6B_ee3JjSXF_y3I/viewform";
 
   function submit(e) {
     e.preventDefault();
