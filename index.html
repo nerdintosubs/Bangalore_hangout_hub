@@ -137,9 +137,53 @@
     "sameAs": ["https://wa.me/917068344125"]
   }
   </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GT-5M88SSS6');
+  </script>
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSFJ1VH9K4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LSFJ1VH9K4');
+  </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5M88SSS6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    // Track WhatsApp clicks and key CTA interactions in GA4
+    (function(){
+      function trackClick(e){
+        try{
+          var a = e.target.closest('a');
+          if(!a) return;
+          if(a.href && a.href.indexOf('wa.me') !== -1){
+            var label = a.href;
+            var text = (a.textContent || '').trim();
+            if(typeof gtag === 'function'){
+              gtag('event','whatsapp_click',{
+                event_category:'engagement',
+                event_label: text || label,
+                link_url: label,
+                page_location: window.location.pathname
+              });
+            }
+          }
+        } catch(_){}
+      }
+      document.addEventListener('click', trackClick, true);
+    })();
+  </script>
 </body>
 </html>

@@ -10,7 +10,6 @@ export default function ProviderSignup() {
     "Domlur"
   ];
 
-  // TODO: Replace with your real Google Form link
   const googleFormUrl = "https://docs.google.com/forms/d/1mQDB7jcUjvagRaBgPknCL6rkyFJw6B_ee3JjSXF_y3I/viewform";
 
   function submit(e) {
@@ -36,7 +35,7 @@ Specialties: ${f.specialties.value}
 Certifications: ${f.certifications.value}
 Source: provider-signup-v2`
     );
-    window.open(\`https://wa.me/917068344125?text=\${msg}\`, '_blank');
+    window.open(`https://wa.me/917068344125?text=${msg}`, '_blank');
   }
 
   return (
