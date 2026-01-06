@@ -5,6 +5,7 @@ dist
 
 # IDE and Editor
 .vscode
+.idea/
 
 # Environment Variables
 .env
