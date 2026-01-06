@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import data from "../data/therapists.json";
 import TherapistCard from "./TherapistCard";
 
-export default function TherapistsGrid() {
-  const [filterZone, setFilterZone] = useState('');
+export default function TherapistsGrid({ defaultZone = '' }) {
+  const [filterZone, setFilterZone] = useState(defaultZone);
   const [filterSpecialty, setFilterSpecialty] = useState('');
 
   const zones = [...new Set(data.flatMap(t => t.zones))];

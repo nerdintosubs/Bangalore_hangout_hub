@@ -6,6 +6,7 @@ export default function TrustBadges() {
     { icon: '🛡️', title: 'Consent-first', desc: 'Safe & professional' },
     { icon: '⚡', title: 'Fast Booking', desc: 'WhatsApp in 1 tap' },
     { icon: '📍', title: 'Near You', desc: 'Popular BLR zones' },
+    { icon: '⏰', title: 'On-time Guarantee', desc: 'Arrives within 15 min or free' },
   ];
 
   return (

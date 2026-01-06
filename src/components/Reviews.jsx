@@ -1,51 +1,51 @@
 import React from 'react';
 
 export default function Reviews() {
-  const items = [
+  const reviews = [
     {
-      name: 'Aparna · Indiranagar',
+      name: "Priya K.",
+      location: "Koramangala",
       rating: 5,
-      text:
-        'Felt safe and very professional. Booked within 30 mins. Deep tissue really helped my neck pain.'
+      text: "Amazing service! The therapist was punctual, professional, and made me feel completely comfortable. Highly recommend!",
+      date: "2024-12-15"
     },
     {
-      name: 'Nidhi · Koramangala',
+      name: "Anjali M.",
+      location: "Indiranagar",
       rating: 5,
-      text:
-        'Loved the aromatherapy add‑on. On time, clean, and courteous. Rebooked for next week.'
+      text: "Safe and professional doorstep massage. The female-only policy gives me peace of mind. Great experience!",
+      date: "2024-12-12"
     },
     {
-      name: 'Shreya · HSR Layout',
-      rating: 4,
-      text:
-        'Good experience overall. Therapist was verified and explained everything clearly.'
+      name: "Sneha R.",
+      location: "HSR Layout",
+      rating: 5,
+      text: "Excellent therapists and excellent service. Arrived exactly on time as promised. Will book again!",
+      date: "2024-12-10"
     }
   ];
 
+  const renderStars = (rating) => {
+    return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+  };
+
   return (
-    <section id="reviews" className="reviews">
-      <h2>What Customers Say</h2>
+    <section id="reviews" className="reviews-section">
+      <h2>What Our Clients Say</h2>
       <div className="reviews-grid">
-        {items.map((r, i) => {
-          const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-          return (
-            <div className="review-card" key={i}>
-              <div className="review-stars" aria-label={`${r.rating} out of 5`}>{stars}</div>
-              <p className="review-text">“{r.text}”</p>
-              <div className="review-name">{r.name}</div>
+        {reviews.map((review, index) => (
+          <div key={index} className="review-card">
+            <div className="review-header">
+              <div className="reviewer-info">
+                <h4>{review.name}</h4>
+                <span className="location">{review.location}</span>
+              </div>
+              <div className="rating">{renderStars(review.rating)}</div>
             </div>
-          );
-        })}
-      </div>
-      <div className="reviews-cta">
-        <a
-          className="btn btn-outline"
-          href="https://www.google.com/search?q=BLR+Hangout+Hub+reviews"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Google Reviews
-        </a>
+            <p className="review-text">"{review.text}"</p>
+            <span className="review-date">{new Date(review.date).toLocaleDateString()}</span>
+          </div>
+        ))}
       </div>
     </section>
   );

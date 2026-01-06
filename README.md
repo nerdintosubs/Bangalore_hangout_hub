@@ -12,11 +12,19 @@ npm run build
 
 ## Features
 
-- Premium, mobile-first React frontend (Vite)
-- Independent therapist profiles with booking via WhatsApp
-- Provider signup form (no server storage by default)
-- Accessibility-first design (WCAG 2.1 AA)
-- SEO-optimized with JSON-LD structured data
+- Premium, mobile-first React frontend (Vite) with dark theme
+- 10+ certified female therapists with detailed profiles and modals
+- Geo-specific landing pages (Koramangala, Indiranagar, HSR Layout)
+- Automated availability updates from Google Sheets integration
+- Loyalty program with tiered perks and referral system
+- Customer reviews and testimonials section
+- WhatsApp-first booking with UTM tracking and source attribution
+- Provider signup form with BLR-specific fields
+- Gated customer area with daily access codes
+- Trust signals: Female-only, KYC-verified, Consent-first, On-time guarantee
+- Accessibility-first design (WCAG 2.1 AA) with ARIA labels and alt text
+- SEO-optimized with JSON-LD structured data and Meta Pixel tracking
+- Analytics: GA4 + GTM + Meta Pixel for conversion tracking
 - Docker & CI/CD ready (GitHub Actions)
 - Static site (fast, secure, cheap to host)
 

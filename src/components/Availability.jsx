@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import availability from '../data/availability.json';
 import therapists from '../data/therapists.json';
 import TherapistCard from './TherapistCard';
+import { fetchAvailabilityFromCSV } from '../utils/googleSheets';
 
 function todayLocalISO() {
   const d = new Date();
@@ -14,6 +15,22 @@ export default function Availability() {
   const [pass, setPass] = useState('');
   const [unlocked, setUnlocked] = useState(false);
   const [message, setMessage] = useState('');
+  const [remoteAvailability, setRemoteAvailability] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  // Load availability from Google Sheets on component mount
+  useEffect(() => {
+    async function loadRemoteAvailability() {
+      setLoading(true);
+      const remote = await fetchAvailabilityFromCSV();
+      if (remote) {
+        setRemoteAvailability(remote);
+        setMessage('Availability loaded from remote source.');
+      }
+      setLoading(false);
+    }
+    loadRemoteAvailability();
+  }, []);
 
   const record = availability[date];
 
