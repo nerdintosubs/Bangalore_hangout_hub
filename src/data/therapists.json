@@ -1,0 +1,44 @@
+[
+  {
+    "id": "t1",
+    "name": "Asha R.",
+    "photo": "https://images.unsplash.com/photo-1570110084740-98b5e57ba21b?auto=format&fit=crop&w=600&q=80",
+    "specialties": [
+      "Swedish",
+      "Aromatherapy"
+    ],
+    "experience_years": 6,
+    "certifications": [
+      "NHB-Approved",
+      "CPR"
+    ],
+    "zones": [
+      "Koramangala",
+      "Indiranagar"
+    ],
+    "bio": "6 years experience in therapeutic & relaxation massage.",
+    "rating": 4.9,
+    "verified": true
+  },
+  {
+    "id": "t3",
+    "name": "Priya S.",
+    "photo": "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=600&q=80",
+    "specialties": [
+      "Thai Massage",
+      "Reflexology"
+    ],
+    "experience_years": 5,
+    "certifications": [
+      "Thai Massage Certified",
+      "Reflexology"
+    ],
+    "zones": [
+      "Whitefield",
+      "Marathahalli"
+    ],
+    "bio": "Traditional Thai massage and reflexology specialist.",
+    "rating": 4.7,
+    "verified": true
+  }
+]
