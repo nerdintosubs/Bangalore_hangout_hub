@@ -12,6 +12,70 @@ body {
   color: #e2e8f0;
 }
 
+main {
+  position: relative;
+  padding-top: 2rem;
+}
+
+.promo-strip {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  background: rgba(10, 15, 30, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.promo-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.promo-title {
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.promo-chip {
+  background: rgba(74, 144, 226, 0.14);
+  border: 1px solid rgba(74, 144, 226, 0.35);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #c7d7ff;
+}
+
+.promo-link {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.promo-link:hover {
+  text-decoration: underline;
+}
+
+.promo-cta {
+  background: linear-gradient(135deg, var(--brand-blue), var(--brand-teal));
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(74, 144, 226, 0.35);
+}
+
+.promo-cta:hover {
+  transform: translateY(-1px);
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -28,13 +92,18 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-main {
-  position: relative;
-}
-
 .hero {
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 1.15rem;
 }
 
 .service-card,
@@ -89,5 +158,14 @@ main {
 @media (max-width: 768px) {
   body {
     padding-bottom: 120px;
+  }
+
+  .promo-inner {
+    padding: 8px 12px;
+  }
+
+  .promo-title {
+    width: 100%;
+    text-align: center;
   }
 }

@@ -174,6 +174,16 @@
   <link rel="stylesheet" href="/assets/overrides.css">
 </head>
 <body>
+  <div class="promo-strip" role="region" aria-label="Quick pricing and booking">
+    <div class="promo-inner">
+      <span class="promo-title">Today’s Quick Prices</span>
+      <span class="promo-chip">Swedish ₹1,500</span>
+      <span class="promo-chip">Deep Tissue ₹2,000</span>
+      <span class="promo-chip">Reflexology ₹1,200</span>
+      <a class="promo-link" href="#pricing">See full pricing</a>
+      <a class="promo-cta" href="#availability">Check today’s availability</a>
+    </div>
+  </div>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-5M88SSS6"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -209,6 +219,28 @@
         } catch(_){}
       }
       document.addEventListener('click', trackClick, true);
+    })();
+  </script>
+  <script>
+    (function () {
+      function updateHero() {
+        var hero = document.querySelector('.hero');
+        if (!hero) return;
+        var title = hero.querySelector('h2');
+        var desc = hero.querySelector('p');
+        var cta = hero.querySelector('.btn');
+        if (title) title.textContent = 'Book a Professional Female Therapist in 60 Minutes';
+        if (desc) desc.textContent = 'Verified, consent-first therapists at your doorstep in Bengaluru. Instant WhatsApp booking and clear pricing.';
+        if (cta) {
+          cta.textContent = 'Book on WhatsApp';
+          cta.href = 'https://wa.me/917068344125?text=Hi%2C%20I%20want%20to%20book%20a%20session%20today.%20src%3Dhero-cta';
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateHero);
+      } else {
+        updateHero();
+      }
     })();
   </script>
 </body>
