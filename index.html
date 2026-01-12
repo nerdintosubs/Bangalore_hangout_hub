@@ -235,11 +235,55 @@
           cta.textContent = 'Book on WhatsApp';
           cta.href = 'https://wa.me/917068344125?text=Hi%2C%20I%20want%20to%20book%20a%20session%20today.%20src%3Dhero-cta';
         }
+
+        if (hero && !hero.querySelector('.hero-secondary')) {
+          var secondary = document.createElement('a');
+          secondary.className = 'btn btn-outline hero-secondary';
+          secondary.href = 'tel:+917068344125';
+          secondary.textContent = 'Call Now';
+          hero.appendChild(secondary);
+        }
+      }
+
+      function insertSteps() {
+        var hero = document.querySelector('.hero');
+        if (!hero) return false;
+        if (document.querySelector('.steps-section')) return true;
+        var steps = document.createElement('section');
+        steps.className = 'steps-section';
+        steps.innerHTML =
+          '<h2>Book in 3 Steps</h2>' +
+          '<div class="steps-grid">' +
+          '<div class="step-card"><div class="step-num">1</div><h3>Pick a service</h3><p>Choose Swedish, Deep Tissue, or Reflexology.</p></div>' +
+          '<div class="step-card"><div class="step-num">2</div><h3>Share your area</h3><p>Tell us your location and preferred time.</p></div>' +
+          '<div class="step-card"><div class="step-num">3</div><h3>Confirm on WhatsApp</h3><p>We match a verified therapist and confirm.</p></div>' +
+          '</div>';
+        hero.insertAdjacentElement('afterend', steps);
+        return true;
+      }
+
+      function addStickyBadge() {
+        var sticky = document.querySelector('.sticky-cta');
+        if (!sticky || sticky.querySelector('.cta-badge')) return false;
+        var badge = document.createElement('span');
+        badge.className = 'cta-badge';
+        badge.textContent = 'From ₹1,200';
+        sticky.insertBefore(badge, sticky.firstChild);
+        return true;
+      }
+
+      function initEnhancements() {
+        updateHero();
+        var okSteps = insertSteps();
+        var okBadge = addStickyBadge();
+        if (!okSteps || !okBadge) {
+          setTimeout(initEnhancements, 600);
+        }
       }
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', updateHero);
+        document.addEventListener('DOMContentLoaded', initEnhancements);
       } else {
-        updateHero();
+        initEnhancements();
       }
     })();
   </script>
