@@ -197,42 +197,7 @@
     </div>
   </noscript>
   <div id="root"></div>
-  <script>
-    // Track WhatsApp and call clicks in GA4
-    (function(){
-      function trackClick(e){
-        try{
-          var a = e.target.closest('a');
-          if(!a || !a.href) return;
-          var href = a.href;
-          var text = (a.textContent || '').trim();
-
-          if(href.indexOf('wa.me') !== -1){
-            if(typeof gtag === 'function'){
-              gtag('event','whatsapp_click',{
-                event_category:'engagement',
-                event_label: text || href,
-                link_url: href,
-                page_location: window.location.pathname
-              });
-            }
-          }
-
-          if(href.indexOf('tel:+') !== -1){
-            if(typeof gtag === 'function'){
-              gtag('event','call_click',{
-                event_category:'engagement',
-                event_label: text || href,
-                tel_number: href.replace('tel:+','+'),
-                page_location: window.location.pathname
-              });
-            }
-          }
-        } catch(_){}
-      }
-      document.addEventListener('click', trackClick, true);
-    })();
-  </script>
+  <script src="/assets/ga-tracking.js"></script>
   <script>
     (function () {
       function updateHero() {

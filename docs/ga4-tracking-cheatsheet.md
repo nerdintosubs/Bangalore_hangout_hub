@@ -42,3 +42,8 @@ See `docs/utm-schema.md` for examples.
 - Enable GA4 debug view locally to verify `whatsapp_click` / `call_click`.
 - Verify UTM tags on all outbound WA links (bio, GBP, ads, site CTAs).
 - Create GA4 Explorations for: (a) WA clicks by campaign, (b) WA clicks by page/section.
+
+## Netlify Server-Side Capture
+- Endpoint: `/.netlify/functions/track-event` sends WA/tel clicks to GA4 via Measurement Protocol.
+- Required env vars in Netlify: `GA4_MEASUREMENT_ID`, `GA4_API_SECRET`.
+- Client helper: `/assets/ga-tracking.js` fires both `gtag` (if present) and the Netlify function for redundancy.
