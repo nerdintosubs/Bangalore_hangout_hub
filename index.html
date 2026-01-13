@@ -198,20 +198,32 @@
   </noscript>
   <div id="root"></div>
   <script>
-    // Track WhatsApp clicks and key CTA interactions in GA4
+    // Track WhatsApp and call clicks in GA4
     (function(){
       function trackClick(e){
         try{
           var a = e.target.closest('a');
-          if(!a) return;
-          if(a.href && a.href.indexOf('wa.me') !== -1){
-            var label = a.href;
-            var text = (a.textContent || '').trim();
+          if(!a || !a.href) return;
+          var href = a.href;
+          var text = (a.textContent || '').trim();
+
+          if(href.indexOf('wa.me') !== -1){
             if(typeof gtag === 'function'){
               gtag('event','whatsapp_click',{
                 event_category:'engagement',
-                event_label: text || label,
-                link_url: label,
+                event_label: text || href,
+                link_url: href,
+                page_location: window.location.pathname
+              });
+            }
+          }
+
+          if(href.indexOf('tel:+') !== -1){
+            if(typeof gtag === 'function'){
+              gtag('event','call_click',{
+                event_category:'engagement',
+                event_label: text || href,
+                tel_number: href.replace('tel:+','+'),
                 page_location: window.location.pathname
               });
             }
