@@ -1,5 +1,4 @@
 import therapists from '../data/therapists.json';
-import availability from '../data/availability.json';
 
 describe('Therapists data', () => {
   it('lists therapists with required fields and valid ratings', () => {
@@ -48,29 +47,3 @@ describe('Therapists data', () => {
   });
 });
 
-describe('Availability data', () => {
-  it('uses ISO date keys mapped to valid availability details', () => {
-    const dateKeyPattern = /^\d{4}-\d{2}-\d{2}$/;
-    const therapistIds = new Set(therapists.map((therapist) => therapist.id));
-
-    Object.entries(availability).forEach(([dateKey, details]) => {
-      expect(dateKey).toMatch(dateKeyPattern);
-
-      const parsedDate = new Date(dateKey);
-      expect(Number.isNaN(parsedDate.getTime())).toBe(false);
-      expect(parsedDate.toISOString().startsWith(dateKey)).toBe(true);
-
-      expect(details.pass).toMatch(/^BLR\d{4}$/);
-
-      expect(Array.isArray(details.therapists)).toBe(true);
-      expect(details.therapists.length).toBeGreaterThan(0);
-      details.therapists.forEach((therapistId) => {
-        expect(therapistId).toMatch(/^t\d+$/);
-        expect(therapistIds.has(therapistId)).toBe(true);
-      });
-
-      expect(typeof details.note).toBe('string');
-      expect(details.note.trim()).not.toHaveLength(0);
-    });
-  });
-});

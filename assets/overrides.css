@@ -1,170 +1,146 @@
-/* Visual polish overrides without touching the app bundle. */
+/* Luxury spa + bold editorial refresh without touching the app bundle. */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap");
+
 :root {
-  --brand-blue: #4a90e2;
-  --brand-teal: #50c9c3;
-  --ink-900: #0b1020;
-  --ink-800: #141a2e;
-  --glow: rgba(80, 201, 195, 0.25);
+  --font-body: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --ink-950: #0b0a07;
+  --ink-900: #14100d;
+  --ink-800: #1d1915;
+  --ink-700: #2a241f;
+  --ink-200: #c7beb0;
+  --paper: #f7f1e8;
+  --accent-gold: #d8b46a;
+  --accent-sand: #e4c98a;
+  --accent-sage: #9fb8a7;
+  --accent-rose: #c49a8c;
+  --edge: rgba(255, 255, 255, 0.08);
+  --edge-strong: rgba(255, 255, 255, 0.16);
+  --panel: rgba(20, 16, 13, 0.92);
+  --panel-soft: rgba(30, 24, 20, 0.86);
+  --glow: rgba(216, 180, 106, 0.25);
 }
 
 body {
-  background: var(--ink-900);
-  color: #e2e8f0;
+  background: var(--ink-950);
+  color: var(--paper);
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
 }
 
-main {
-  position: relative;
-  padding-top: 2rem;
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background:
+    radial-gradient(1100px 520px at 8% -12%, rgba(216, 180, 106, 0.18), transparent 60%),
+    radial-gradient(900px 420px at 92% 0%, rgba(159, 184, 167, 0.2), transparent 65%),
+    radial-gradient(900px 520px at 50% 100%, rgba(12, 10, 8, 0.9), transparent 55%);
+}
+
+body::after {
+  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+a {
+  color: var(--accent-gold);
+}
+
+header {
+  background: linear-gradient(120deg, rgba(17, 13, 10, 0.98), rgba(26, 21, 17, 0.92));
+  border-bottom: 1px solid var(--edge);
+}
+
+header h1,
+h1,
+h2,
+h3,
+h4,
+.promo-title,
+.pricing-head h2,
+.reviews-section h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+nav a {
+  color: var(--paper);
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--accent-sand);
 }
 
 .promo-strip {
-  position: sticky;
-  top: 0;
-  z-index: 1100;
-  background: rgba(10, 15, 30, 0.92);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-}
-
-.promo-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem;
+  background: rgba(12, 10, 8, 0.94);
+  border-bottom: 1px solid var(--edge);
+  backdrop-filter: blur(12px);
 }
 
 .promo-title {
-  font-weight: 700;
-  color: #e2e8f0;
+  color: var(--paper);
 }
 
 .promo-chip {
-  background: rgba(74, 144, 226, 0.14);
-  border: 1px solid rgba(74, 144, 226, 0.35);
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-weight: 600;
-  color: #c7d7ff;
+  background: rgba(216, 180, 106, 0.12);
+  border: 1px solid rgba(216, 180, 106, 0.35);
+  color: #f3e7cf;
 }
 
 .promo-link {
-  color: #93c5fd;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.promo-link:hover {
-  text-decoration: underline;
+  color: var(--accent-sand);
 }
 
 .promo-cta {
-  background: linear-gradient(135deg, var(--brand-blue), var(--brand-teal));
-  color: #fff;
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 999px;
+  background: linear-gradient(135deg, #e4c98a, #c99a55);
+  color: #22170f;
   font-weight: 700;
-  box-shadow: 0 6px 18px rgba(74, 144, 226, 0.35);
+  box-shadow: 0 10px 25px rgba(216, 180, 106, 0.35);
 }
 
 .promo-cta:hover {
   transform: translateY(-1px);
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(900px 420px at 10% -10%, rgba(74, 144, 226, 0.24), transparent 60%),
-    radial-gradient(800px 380px at 90% 10%, rgba(80, 201, 195, 0.2), transparent 65%),
-    radial-gradient(700px 380px at 50% 100%, rgba(15, 23, 42, 0.9), transparent 60%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
 .hero {
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  border: 1px solid var(--edge);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
 }
 
 .hero h2 {
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+  text-transform: none;
 }
 
 .hero p {
-  font-size: 1.15rem;
-}
-
-.hero-secondary {
-  margin-left: 10px;
-}
-
-.steps-section {
-  margin: 2.5rem auto 3rem;
-  text-align: center;
+  color: #efe6d8;
+  font-size: 1.1rem;
 }
 
 .steps-section h2 {
-  margin-bottom: 1.5rem;
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  color: var(--accent-sand);
 }
 
 .step-card {
-  background: rgba(20, 26, 46, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 1.1rem 1.2rem;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  background: var(--panel-soft);
+  border: 1px solid var(--edge);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
 }
 
 .step-num {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  margin: 0 auto 0.6rem;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  color: #fff;
-  background: linear-gradient(135deg, var(--brand-blue), var(--brand-teal));
-  box-shadow: 0 8px 18px rgba(74, 144, 226, 0.35);
-}
-
-.step-card h3 {
-  margin: 0 0 0.35rem;
-  color: #c7d7ff;
-}
-
-.step-card p {
-  margin: 0;
-  color: #cbd5f5;
-}
-
-.cta-badge {
-  font-weight: 700;
-  color: #0f172a;
-  background: #fbbf24;
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: 0.85rem;
-  align-self: center;
-  box-shadow: 0 6px 16px rgba(251, 191, 36, 0.35);
+  background: linear-gradient(135deg, #e4c98a, #c99a55);
+  color: #22170f;
+  box-shadow: 0 10px 22px rgba(216, 180, 106, 0.35);
 }
 
 .service-card,
@@ -173,9 +149,9 @@ header {
 .pricing-card,
 .loyalty-status,
 .referral-section {
-  background: rgba(20, 26, 46, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
 .faq-item,
@@ -183,37 +159,107 @@ header {
 .lock-box,
 .badge-card,
 .pricing-item {
-  background: #0f172a;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--panel-soft);
+  border: 1px solid var(--edge);
 }
 
-.btn {
-  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.3);
-}
-
-.btn-outline {
-  box-shadow: none;
-}
-
-.sticky-cta {
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.faq-item h3 {
+  color: var(--accent-sand);
 }
 
 .review-text {
-  color: #cbd5f5;
+  color: #e6dccd;
 }
 
 .review-name,
-.location {
-  color: #94a3b8;
+.location,
+.muted {
+  color: var(--ink-200);
 }
 
-.status.info {
-  border-color: rgba(59, 130, 246, 0.45);
+.btn {
+  background: linear-gradient(135deg, #e4c98a, #c99a55);
+  color: #22170f;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 12px 28px rgba(216, 180, 106, 0.32);
 }
 
-.availability .note {
-  border-left-color: var(--brand-teal);
+.btn:hover {
+  color: #22170f;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(216, 180, 106, 0.65);
+  color: var(--accent-sand);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: rgba(216, 180, 106, 0.15);
+  color: var(--paper);
+}
+
+.sticky-cta {
+  background: rgba(20, 16, 13, 0.88);
+  border: 1px solid var(--edge-strong);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.cta-badge {
+  background: var(--accent-sand);
+  color: #22170f;
+}
+
+.pricing-head .muted,
+.smallprint {
+  color: var(--ink-200);
+}
+
+.badge-title {
+  color: var(--accent-sand);
+}
+
+.badge-desc {
+  color: var(--ink-200);
+}
+
+footer {
+  background: rgba(10, 8, 6, 0.95);
+  border-top: 1px solid var(--edge);
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.75rem 1.25rem 3.5rem;
+  line-height: 1.8;
+}
+
+.wrap h1,
+.wrap h2,
+.wrap h3 {
+  font-family: var(--font-display);
+}
+
+.wrap h1 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.wrap h2 {
+  color: var(--accent-sand);
+  font-size: 1.35rem;
+}
+
+.wrap h3 {
+  color: var(--accent-sage);
+  font-size: 1.05rem;
+}
+
+.wrap .card {
+  border-radius: 16px;
 }
 
 @media (max-width: 768px) {
@@ -233,5 +279,9 @@ header {
   .hero-secondary {
     margin-left: 0;
     margin-top: 10px;
+  }
+
+  .wrap {
+    padding: 2rem 1rem 3rem;
   }
 }

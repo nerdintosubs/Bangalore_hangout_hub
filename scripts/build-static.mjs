@@ -46,7 +46,6 @@ async function main() {
     "CNAME",
     "koramangala.html",
     "indiranagar.html",
-    "admin-availability.html",
   ];
 
   for (const file of files) {
