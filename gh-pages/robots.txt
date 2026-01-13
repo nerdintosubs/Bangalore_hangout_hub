@@ -1,0 +1,28 @@
+# robots.txt for BLR Hangout Hub
+# Guidance for web crawlers
+
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env*
+
+# NOTE: Do NOT block XML; sitemap must remain crawlable
+# Disallow: /*.json$  # uncomment if you really want to block raw JSON endpoints
+
+# Crawl pacing
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://blrhangouthub.com/sitemap.xml
+
+# Specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
