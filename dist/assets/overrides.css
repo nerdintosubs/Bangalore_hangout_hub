@@ -131,6 +131,85 @@ nav a:hover {
   color: var(--accent-sand);
 }
 
+.standards-section,
+.focus-section,
+.expect-section,
+.promise-section {
+  max-width: 1200px;
+  margin: 0 auto 2.75rem;
+  animation: fadeInUp 0.5s ease both;
+}
+
+.section-intro {
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  color: var(--ink-200);
+}
+
+.standards-grid,
+.focus-grid,
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.standards-card,
+.focus-card,
+.expect-card,
+.promise-card {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 16px;
+  padding: 1.35rem 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.standards-card h3,
+.focus-card h3,
+.expect-card h3 {
+  color: var(--accent-sand);
+  margin-top: 0;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-sand);
+}
+
+.focus-tag {
+  display: inline-flex;
+  margin-top: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(216, 180, 106, 0.35);
+  background: rgba(216, 180, 106, 0.18);
+  color: var(--paper);
+  font-size: 0.85rem;
+}
+
+.promise-section {
+  display: flex;
+  justify-content: center;
+}
+
+.promise-card {
+  max-width: 900px;
+  text-align: center;
+  padding: 1.75rem 2.25rem;
+}
+
+.promise-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
 .step-card {
   background: var(--panel-soft);
   border: 1px solid var(--edge);
