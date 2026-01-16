@@ -189,20 +189,33 @@
         var title = hero.querySelector('h2');
         var desc = hero.querySelector('p');
         var cta = hero.querySelector('.btn');
-        if (title) title.textContent = 'Book a verified female therapist today';
-        if (desc) desc.textContent = 'KYC-verified, consent-first care at your doorstep in Bengaluru. Transparent pricing and fast WhatsApp confirmation.';
+        var actions = hero.querySelector('.hero-actions');
         if (cta) {
           cta.textContent = 'Book on WhatsApp';
           cta.href = 'https://wa.me/919187351205?text=Hi%2C%20I%20want%20to%20book%20a%20session%20today.%20src%3Dhero-cta';
         }
 
-        if (hero && !hero.querySelector('.hero-secondary')) {
-          var secondary = document.createElement('a');
-          secondary.className = 'btn btn-outline hero-secondary';
-          secondary.href = '#standards';
-          secondary.textContent = 'View Standards';
-          hero.appendChild(secondary);
+        if (!actions) {
+          actions = document.createElement('div');
+          actions.className = 'hero-actions';
+          if (cta && cta.parentNode) {
+            cta.parentNode.insertBefore(actions, cta.nextSibling);
+            actions.appendChild(cta);
+          } else {
+            hero.appendChild(actions);
+          }
+        } else if (cta && cta.parentNode !== actions) {
+          actions.appendChild(cta);
         }
+
+        var hiring = actions.querySelector('.hero-secondary');
+        if (!hiring) {
+          hiring = document.createElement('a');
+          hiring.className = 'btn btn-outline hero-secondary';
+          actions.appendChild(hiring);
+        }
+        hiring.href = '/therapist-hiring.html';
+        hiring.textContent = 'Apply as Therapist';
       }
 
       function insertSteps() {
@@ -314,25 +327,13 @@
       }
 
       function insertHiringSection() {
-        var anchor = document.querySelector('.steps-section') || document.querySelector('.hero');
-        if (!anchor || document.querySelector('#therapist-hiring')) return !!anchor;
-        var section = document.createElement('section');
-        section.id = 'therapist-hiring';
-        section.className = 'hiring-section';
-        section.innerHTML =
-          '<div class="hiring-card">' +
-          '<div class="hiring-copy">' +
-          '<h2>Hiring Therapists in Bengaluru</h2>' +
-          '<p>Training, accommodation support, salary up to Rs 45,000, and perks. Freshers welcome.</p>' +
-          '</div>' +
-          '<div class="hiring-cta">' +
-          '<a class="btn" href="/therapist-hiring.html">Apply on WhatsApp</a>' +
-          '<a class="btn btn-outline" href="/therapist-hiring.html#apply">Quick Apply Form</a>' +
-          '</div>' +
-          '</div>';
-        anchor.insertAdjacentElement('afterend', section);
+        var existing = document.querySelector('#therapist-hiring');
+        if (existing) {
+          existing.remove();
+        }
         return true;
       }
+
 
       function insertPromiseSection() {
         var anchor = document.querySelector('#reviews');
