@@ -313,6 +313,27 @@
         return true;
       }
 
+      function insertHiringSection() {
+        var anchor = document.querySelector('#signup');
+        if (!anchor || document.querySelector('#therapist-hiring')) return !!anchor;
+        var section = document.createElement('section');
+        section.id = 'therapist-hiring';
+        section.className = 'hiring-section';
+        section.innerHTML =
+          '<div class="hiring-card">' +
+          '<div class="hiring-copy">' +
+          '<h2>Hiring Therapists in Bengaluru</h2>' +
+          '<p>Training, accommodation support, salary up to Rs 45,000, and perks. Freshers welcome.</p>' +
+          '</div>' +
+          '<div class="hiring-cta">' +
+          '<a class="btn" href="/therapist-hiring.html">Apply on WhatsApp</a>' +
+          '<a class="btn btn-outline" href="/therapist-hiring.html#apply">Quick Apply Form</a>' +
+          '</div>' +
+          '</div>';
+        anchor.insertAdjacentElement('beforebegin', section);
+        return true;
+      }
+
       function insertPromiseSection() {
         var anchor = document.querySelector('#reviews');
         if (!anchor || document.querySelector('#promise')) return !!anchor;
@@ -341,7 +362,8 @@
         var okFocus = insertFocusSection();
         var okExpect = insertExpectationsSection();
         var okPromise = insertPromiseSection();
-        if (!okSteps || !okBadge || !okBadges || !okStandards || !okFocus || !okExpect || !okPromise) {
+        var okHiring = insertHiringSection();
+        if (!okSteps || !okBadge || !okBadges || !okStandards || !okFocus || !okExpect || !okPromise || !okHiring) {
           setTimeout(initEnhancements, 600);
         }
       }

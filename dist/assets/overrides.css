@@ -210,6 +210,39 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
+.hiring-section {
+  max-width: 1200px;
+  margin: 0 auto 2.75rem;
+  animation: fadeInUp 0.5s ease both;
+}
+
+.hiring-card {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.hiring-card h2 {
+  margin: 0 0 0.4rem;
+  color: var(--accent-sand);
+}
+
+.hiring-card p {
+  margin: 0;
+  color: var(--ink-200);
+}
+
+.hiring-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .step-card {
   background: var(--panel-soft);
   border: 1px solid var(--edge);
