@@ -1,4 +1,4 @@
-const ALLOWED_EVENTS = new Set(["whatsapp_click", "call_click"]);
+const ALLOWED_EVENTS = new Set(["whatsapp_click", "call_click", "lead_submit"]);
 
 export const handler = async (event) => {
   if (event.httpMethod !== "POST") {

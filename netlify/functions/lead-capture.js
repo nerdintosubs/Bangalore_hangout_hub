@@ -44,18 +44,19 @@ const buildCustomer = (payload) => ({
   date: trimText(payload.date, 40),
 });
 
-const buildTherapist = (payload) => ({
-  name: trimText(payload.name, 120),
-  phone: trimText(payload.phone, 60),
-  residency: trimText(payload.residency, 120),
-  relocate: trimText(payload.relocate, 120),
-  fresher: Boolean(payload.fresher),
-  experience: trimText(payload.experience, 40),
-  specialties: trimText(payload.specialties, 200),
-  certifications: trimText(payload.certifications, 200),
-  zones: trimArray(payload.zones),
-  shifts: trimArray(payload.shifts),
-});
+  const buildTherapist = (payload) => ({
+    name: trimText(payload.name, 120),
+    phone: trimText(payload.phone, 60),
+    residency: trimText(payload.residency, 120),
+    relocate: trimText(payload.relocate, 120),
+    fresher: Boolean(payload.fresher),
+    experience: trimText(payload.experience, 40),
+    specialties: trimText(payload.specialties, 200),
+    certifications: trimText(payload.certifications, 200),
+    language: trimText(payload.language, 120),
+    zones: trimArray(payload.zones),
+    shifts: trimArray(payload.shifts),
+  });
 
 const withCors = (statusCode, body) => ({
   statusCode,

@@ -179,12 +179,21 @@
             experience: String(formData.get("experience") || ""),
             specialties: String(formData.get("specialties") || ""),
             certifications: String(formData.get("certifications") || ""),
+            language: String(formData.get("language") || ""),
             zones: formData.getAll("zones").map(String),
             shifts: formData.getAll("shifts").map(String),
           },
           "provider-signup"
         );
         sendLead(payload);
+        const leadParams = {
+          event_category: "lead",
+          event_label: "therapist",
+          lead_type: "therapist",
+          page_location: window.location.pathname,
+        };
+        sendToGA4("lead_submit", leadParams);
+        sendToFunction("lead_submit", leadParams);
         return;
       }
 
@@ -200,6 +209,14 @@
           "customer-signup"
         );
         sendLead(payload);
+        const leadParams = {
+          event_category: "lead",
+          event_label: "customer",
+          lead_type: "customer",
+          page_location: window.location.pathname,
+        };
+        sendToGA4("lead_submit", leadParams);
+        sendToFunction("lead_submit", leadParams);
       }
     } catch (_) {}
   }
