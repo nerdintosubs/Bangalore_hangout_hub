@@ -314,7 +314,7 @@
       }
 
       function insertHiringSection() {
-        var anchor = document.querySelector('#signup');
+        var anchor = document.querySelector('.steps-section') || document.querySelector('.hero');
         if (!anchor || document.querySelector('#therapist-hiring')) return !!anchor;
         var section = document.createElement('section');
         section.id = 'therapist-hiring';
@@ -330,7 +330,7 @@
           '<a class="btn btn-outline" href="/therapist-hiring.html#apply">Quick Apply Form</a>' +
           '</div>' +
           '</div>';
-        anchor.insertAdjacentElement('beforebegin', section);
+        anchor.insertAdjacentElement('afterend', section);
         return true;
       }
 
