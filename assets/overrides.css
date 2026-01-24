@@ -57,6 +57,22 @@ a {
 header {
   background: linear-gradient(120deg, rgba(17, 13, 10, 0.98), rgba(26, 21, 17, 0.92));
   border-bottom: 1px solid var(--edge);
+  box-shadow: 0 4px 12px rgba(7, 5, 4, 0.28);
+}
+
+header nav {
+  padding: 0.45rem 1.5rem;
+  gap: 1rem;
+}
+
+header h1 {
+  font-size: clamp(0.98rem, 1.9vw, 1.2rem);
+  letter-spacing: 0.015em;
+  line-height: 1.1;
+}
+
+nav li {
+  margin-left: 0.9rem;
 }
 
 header h1,
@@ -74,10 +90,23 @@ h4,
 nav a {
   color: var(--paper);
   font-weight: 500;
+  font-size: 0.88rem;
+  letter-spacing: 0.015em;
+  line-height: 1.2;
 }
 
 nav a:hover {
   color: var(--accent-sand);
+}
+
+@media (max-width: 768px) {
+  header nav {
+    padding: 0.55rem 0.9rem;
+  }
+
+  nav a {
+    font-size: 0.84rem;
+  }
 }
 
 .promo-strip {
