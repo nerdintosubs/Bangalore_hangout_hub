@@ -391,6 +391,47 @@ footer {
     padding-bottom: 120px;
   }
 
+  header {
+    padding: 0.15rem 0;
+  }
+
+  header nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0 0.6rem;
+  }
+
+  header h1 {
+    font-size: 0.98rem;
+    line-height: 1.1;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.25rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100%;
+  }
+
+  nav li {
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  nav ul::-webkit-scrollbar {
+    display: none;
+  }
+
   .promo-inner {
     padding: 8px 12px;
   }
